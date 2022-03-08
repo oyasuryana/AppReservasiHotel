@@ -18,11 +18,11 @@ if(isset($listFasilitas)){
     foreach($listFasilitas as $row){ ?>
 
 <div class="col-md-3">
-    <div class="card" style="min-height:350px">
-    <img src="<?=base_url($row['foto_fasilitas']);?>" class="card-img-top" alt="...">
+    <div class="card" style="min-height:400px">
+    <img src="<?=base_url('/uploads/'.$row['foto_fasilitas']);?>" class="card-img-top" alt="..." style="min-height:170px">
     <div class="card-body">
         <h5 class="card-title"><?=$row['nama_fasilitas'];?></h5>
-        <p class="card-text text-sm"><?=$row['deskripsi_fasilitas'];?>.</p>
+        <p class="card-text small" style="min-height:70px"><?=$row['deskripsi_fasilitas'];?>.</p>
         <a href="<?=site_url('/edit-fasilitas-hotel/'.$row['id_fasilitas_hotel']);?>" class="btn btn-primary btn-block btn-sm">Edit</a>
         <a href="<?=site_url('/hapus-fasilitas-hotel/'.$row['id_fasilitas_hotel']);?>" class="btn btn-danger btn-block btn-sm">Hapus</a>
     </div>

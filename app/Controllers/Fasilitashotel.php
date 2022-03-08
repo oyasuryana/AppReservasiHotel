@@ -35,12 +35,12 @@ class Fasilitashotel extends BaseController
 
         // 4. mengecek apakah tombol simpan diklik ?
         if($this->validate($aturanForm)){
-            //echo $this->request->getPost('txtNamaFasilitas');
-            //echo $this->request->getPost('txtDeskrkipsiFasilitas');
+            $foto=$this->request->getFile('txtFotoFasilitas');
+            $foto->move('uploads');
             $data=[
                 'nama_fasilitas'=> $this->request->getPost('txtNamaFasilitas'),
                 'deskripsi_fasilitas' => $this->request->getPost('txtDeskrkipsiFasilitas'),
-                'foto_fasilitas'=>'-'
+                'foto_fasilitas'=> $foto->getClientName()
             ];
             $this->fasilitashotel->save($data);
             return redirect()->to(site_url('/fasilitas-hotel'));

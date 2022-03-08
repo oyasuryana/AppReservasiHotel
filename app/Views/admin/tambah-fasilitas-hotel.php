@@ -6,7 +6,7 @@
 <h2><?=$JudulHalaman;?></h2>
 <?=$introText;?>
 
-<form method="POST" action="<?=site_url('/tambah-fasilitas-hotel');?>">
+<form method="POST" action="<?=site_url('/tambah-fasilitas-hotel');?>" enctype="multipart/form-data">
 
 <div class="form-group">
     <label class="font-weight-bold">Nama Fasilitas</label>
