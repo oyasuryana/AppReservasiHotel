@@ -11,6 +11,7 @@
     <a href="<?=site_url('/tambah-fasilitas-hotel');?>" class="btn btn-success btn-sm font-weight-bold">Tambah Fasilitas</a>
 </p>
 
+<?=session()->getFlashData('info');?>
 
 <div class="row">
     <?php
@@ -19,7 +20,7 @@ if(isset($listFasilitas)){
 
 <div class="col-md-3">
     <div class="card" style="min-height:400px">
-    <img src="<?=base_url('/uploads/'.$row['foto_fasilitas']);?>" class="card-img-top" alt="..." style="min-height:170px">
+    <img src="<?=base_url('/uploads/'.$row['foto_fasilitas']);?>" class="card-img-top" style="height:170px">
     <div class="card-body">
         <h5 class="card-title"><?=$row['nama_fasilitas'];?></h5>
         <p class="card-text small" style="min-height:70px"><?=$row['deskripsi_fasilitas'];?>.</p>

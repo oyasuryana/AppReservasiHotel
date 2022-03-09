@@ -57,6 +57,9 @@ $routes->post('/tambah-fasilitas-hotel','Fasilitashotel::tambah',['filter'=>'ote
 
 $routes->get('/hapus-fasilitas-hotel/(:num)','Fasilitashotel::hapus/$1',['filter'=>'otentifikasi']);
 
+$routes->get('/edit-fasilitas-hotel/(:num)','Fasilitashotel::edit/$1',['filter'=>'otentifikasi']);
+
+$routes->post('/edit-fasilitas-hotel','Fasilitashotel::edit',['filter'=>'otentifikasi']);
 
 
 
