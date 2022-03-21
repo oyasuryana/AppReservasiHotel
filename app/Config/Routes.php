@@ -47,8 +47,6 @@ $routes->get('/logout','Admin::index');
 
 ############### RUTE untuk mengelola Fasilitas Hotel #####################
 
-//$routes->get('/fasilitas-hotel','Fasilitashotel::index');   <-- jika filter belum jalan
-
 $routes->get('/fasilitas-hotel','Fasilitashotel::index',['filter'=>'otentifikasi']);
 
 $routes->get('/tambah-fasilitas-hotel','Fasilitashotel::tambah',['filter'=>'otentifikasi']);
@@ -61,12 +59,36 @@ $routes->get('/edit-fasilitas-hotel/(:num)','Fasilitashotel::edit/$1',['filter'=
 
 $routes->post('/edit-fasilitas-hotel','Fasilitashotel::edit',['filter'=>'otentifikasi']);
 
+############### RUTE untuk mengelola Fasilitas Kamar #####################
+
+$routes->get('/fasilitas-kamar','Fasilitaskamar::index',['filter'=>'otentifikasi']);
+
+$routes->get('/tambah-fasilitas-kamar','Fasilitaskamar::tambah',['filter'=>'otentifikasi']);
+
+$routes->post('/tambah-fasilitas-kamar','Fasilitaskamar::tambah',['filter'=>'otentifikasi']);
+
+$routes->get('/hapus-fasilitas-kamar/(:num)','Fasilitaskamar::hapus/$1',['filter'=>'otentifikasi']);
+
+$routes->get('/edit-fasilitas-kamar/(:num)','Fasilitaskamar::edit/$1',['filter'=>'otentifikasi']);
+
+$routes->post('/edit-fasilitas-kamar','Fasilitaskamar::edit',['filter'=>'otentifikasi']);
 
 
 ############### RUTE untuk mengelola Fasilitas Kamar #####################
 
+$routes->get('/tampil-kamar','Kamar::index',['filter'=>'otentifikasi']);
 
+$routes->get('/tambah-kamar','Kamar::tambah',['filter'=>'otentifikasi']);
 
+$routes->post('/tambah-kamar','Kamar::tambah',['filter'=>'otentifikasi']);
+
+$routes->get('/hapus-kamar/(:num)','Kamar::hapus/$1',['filter'=>'otentifikasi']);
+
+$routes->get('/edit-kamar/(:num)','Kamar::edit/$1',['filter'=>'otentifikasi']);
+
+$routes->post('/edit-kamar','Kamar::edit',['filter'=>'otentifikasi']);
+
+$routes->get('/hapus-item-fasilitas-kamar/(:num)','Kamar::hapusItemFasilitas/$1',['filter'=>'otentifikasi']);
 
 /*
  * --------------------------------------------------------------------

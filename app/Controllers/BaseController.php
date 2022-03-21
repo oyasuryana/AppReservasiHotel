@@ -12,6 +12,9 @@ use Psr\Log\LoggerInterface;
 // meregister model
 use App\Models\Madmin;
 use App\Models\Mfasilitashotel;
+use App\Models\Mfasilitaskamar;
+use App\Models\Mkamar;
+use App\Models\Mdetailkamar;
 /**
  * Class BaseController
  *
@@ -34,6 +37,12 @@ class BaseController extends Controller
     protected $admin;
     // membuat properti $fasilitashotel
     protected $fasilitashotel;
+    // membuat properti $fasilitaskamar
+    protected $fasilitaskamar;
+    // membuat properti $kamar
+    protected $kamar;
+    // membuat properti $kamar
+    protected $detailkamar;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -42,7 +51,7 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = [];
+    protected $helpers = ['fasilitaskamar'];
 
     /**
      * Constructor.
@@ -57,7 +66,16 @@ class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
         $this->admin = NEW Madmin;
+        // membuat instance  fasilitashotel
         $this->fasilitashotel = NEW Mfasilitashotel;
+
+        // membuat instance  fasilitaskamar
+        $this->fasilitaskamar = NEW Mfasilitaskamar;
+
+        // membuat instance  kamar
+        $this->kamar = NEW Mkamar;
         
+        // membuat instance detail kamar
+        $this->detailkamar = NEW Mdetailkamar;
     }
 }

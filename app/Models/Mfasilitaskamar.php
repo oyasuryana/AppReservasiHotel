@@ -4,21 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Mfasilitashotel extends Model
+class Mfasilitaskamar extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'tbl_fasilitas_hotel';
-    protected $primaryKey       = 'id_fasilitas_hotel';
+    protected $table            = 'tbl_fasilitas_kamar';
+    protected $primaryKey       = 'id_fasilitas_kamar';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [ 'id_fasilitas_hotel',
-                                    'nama_fasilitas',
-                                    'deskripsi_fasilitas',
-                                    'foto_fasilitas',
-                                    ];
+    protected $allowedFields    = ['id_fasilitas_kamar','nama_fasilitas','deskripsi_fasilitas','foto_fasilitas'];
 
     // Dates
     protected $useTimestamps = false;
