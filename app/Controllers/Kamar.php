@@ -34,41 +34,58 @@ class Kamar extends BaseController
 
         // 5. cek apakah txtNomorKamar diisi saat tombol simpan ditekan
         if($this->validate($aturanForm)){
-            // 6. siapkan data kamar dalam array
+            // 6. ambil file foto simpan di variabel $foto
+            $foto=$this->request->getFile('txtFotoKamar');
+
+            // 7. upload foto ke folder upload
+            $foto->move('uploads');
+
+            // 8. siapkan data kamar dalam array
             $dataKamar=[
                 'no_kamar'=>$this->request->getPost('txtNomorKamar'),
                 'tipe_kamar'=>$this->request->getPost('txtTipeKamar'),
-                'foto_kamar'=>'-'
+                'foto_kamar'=>$foto->getClientName()  // nama file foto disimpan ke database
             ];
-            // 7. simppan ke tbl_kamar
+            // 9. simppan ke tbl_kamar
             $this->kamar->save($dataKamar);
-            
-            
-            // 8. kumpulkan fasiltias kamar yang di ceklist dalam array
+
+            // 10. kumpulkan fasiltias kamar yang di ceklist dalam array
             $txtIdFasilitasKamar=$this->request->getPost('txtIdFasilitasKamar');
             for($a=0;$a<count($txtIdFasilitasKamar);$a++){
                 $dataFasilitasKamar[]=[
-                    //9. id_kamar berasal dari id_kamar terakhir yang disimpan
+                    //11. id_kamar berasal dari id_kamar terakhir yang disimpan
                     'id_kamar'=>$this->kamar->getInsertID(), 
                     'id_fasilitas_kamar'=>$txtIdFasilitasKamar[$a]    
                 ];
             }
-            // 10. simpan fasilitas kamar ke tbl_detail_kamar
+            // 12. simpan fasilitas kamar ke tbl_detail_kamar
             $this->detailkamar->insertBatch($dataFasilitasKamar);
 
-            // 11. arahkan ke tampil kamar
+            // 13. arahkan ke tampil kamar
             return redirect()->to(site_url('/tampil-kamar'))->with('info','<div class="alert alert-success">Data berhasil disimpan</div>');
 
         };
-            // 12. load view admin/tambah-kamar.php        
+            // 13. load view admin/tambah-kamar.php        
         return view('admin/tambah-kamar',$data);      
     }
 
+    
     public function hapus($idKamar){
+        // 1. syarat hapus kamar
         $syaratHapus=[
             'id_kamar'=>$idKamar
         ];
+        
+        // 2. info detail kamar yang akan dihapus
+        $detailKamar=$this->kamar->where($syaratHapus)->find()[0];
+
+        // 3. hapus file foto kamar di folder upload
+        unlink('uploads/'.$detailKamar['foto_kamar']);
+
+        // 4. hapus kamar mysql
         $this->kamar->where($syaratHapus)->delete();
+
+        // 5. arahkan ke tampil-kamar dengan membawa pesan sukes hapus
         return redirect()->to('/tampil-kamar')->with('info','<div class="alert alert-success">Kamar berhasil dihapus</div>');        
     }
 
@@ -79,6 +96,55 @@ class Kamar extends BaseController
         ];
         $this->detailkamar->delete($syaratHapus);
         return redirect()->to('/tampil-kamar')->with('info','<div class="alert alert-success">Fasilitas kamar berhasil dihapus</div>');        
+    }
+
+    public function edit($idKamar=null){
+        // 1. Set judul halaman
+        $data['JudulHalaman']='Data Kamar';
+
+        // 2. Set intro halaman
+        $data['introText']='<p>Berikut ini adalah daftar kamar, silahkan lakukan pengelolaan  data kamar </p>';  
+
+        // 3. Bagian hanya dijalankan ketika mengklik tombol edit
+        if($idKamar!=null){
+            // 4. syarat hapus kamar
+            $syarat=[
+                'id_kamar'=>$idKamar
+            ];
+            
+            // 5. info  kamar yang akan dihapus
+            $data['Kamar']=$this->kamar->where($syarat)->find()[0];
+            $data['idKamar']=$idKamar;
+        }
+
+        // 6. kirim data fasilitas kamar untuk checkbox
+        $data['listFasilitasKamar']=$this->fasilitaskamar->find(); 
+
+        // 7. load form helper
+        helper(['form']);
+        $aturanForm=[
+            'txtNomorKamar'=>'required'
+        ];
+
+        // 8. bagian ini dijalankan jika tombol update diklik
+        if($this->validate($aturanForm)){
+            // 9. menampung file foto
+            $foto=$this->request->getFile('txtFotoKamar');
+            
+            // 10. mengecek apakah memilih file foto atau tidak
+            if($foto->isValid()){
+                // 11. upload yang baru
+                $foto->move('uploads');
+
+            }else {
+
+            }
+            // 12. arahkan ke tampil-kamar dengan membawa pesan sukes hapus
+            return redirect()->to('/tampil-kamar')->with('info','<div class="alert alert-success">Kamar berhasil diupdate</div>');        
+        }        
+
+        // 13. load view admin/tambah-kamar.php        
+        return view('admin/edit-kamar',$data);      
     }
 
 }

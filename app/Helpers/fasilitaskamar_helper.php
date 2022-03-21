@@ -4,7 +4,7 @@
 use App\Models\Mdetailkamar;
 
 // mengambil daftar fasilitas kamar berdasarkan id kamar
-	function listFasilitasKamar($idKamar){
+function listFasilitasKamar($idKamar){
     $detailKamar=New Mdetailkamar;
     
     $syarat=[
@@ -17,4 +17,21 @@ use App\Models\Mdetailkamar;
                         ->find();
 
     return $listDetailKamar;
+}
+
+
+function cekFasilitasDiKamar($idKamar,$idFasilitasKamar){
+    $detailKamar=New Mdetailkamar;
+    
+    $syarat=[
+        'id_kamar'=>$idKamar,
+        'id_fasilitas_kamar'=>$idFasilitasKamar
+    ];
+
+    $listDetailKamar =  $detailKamar
+                        ->where($syarat)
+                        ->find();
+
+    return count($listDetailKamar);
+
 }
