@@ -53,7 +53,9 @@
       </li>
 
       
-
+    <?php
+      if(session()->get('level')=='admin'){
+    ?>
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">Master Data</a>
@@ -64,9 +66,19 @@
         </div>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="<?=site_url('/reservasi');?>">Reservasi</a>
+      <?php } 
+      if(session()->get('level')=='petugas') {
+      ?>  
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">Reservasi</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="<?=site_url('/tampil-reservasi');?>">Reservasi</a>
+          <a class="dropdown-item" href="<?=site_url('/tampil-kamar');?>">Cek Kamar</a>
+        </div>
       </li>
+      
+      <?php } ?>
 
       <li class="nav-item">
         <a class="nav-link" href="<?=site_url('/logout');?>">Logout</a>
@@ -101,9 +113,10 @@ if(!isset($JudulHalaman)){ ?>
 
       <script>
       $(document).ready(function() {
-        setTimeout(function() {
-        $(".alert").fadeOut('slow');
-        }, 2000);
+          setTimeout(function() {
+          $(".alert").fadeOut('slow');
+          }, 2000);
+
       });    
       </script>      
   </body>

@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'fe3c785ef20626e836378481b5a88b8e6860fff6',
+        'reference' => '255ce572341f75a465098650a400eb66167dfb4d',
         'name' => 'codeigniter4/appstarter',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'fe3c785ef20626e836378481b5a88b8e6860fff6',
+            'reference' => '255ce572341f75a465098650a400eb66167dfb4d',
             'dev_requirement' => false,
         ),
         'codeigniter4/framework' => array(
@@ -378,6 +378,15 @@
             'aliases' => array(),
             'reference' => '30885182c981ab175d4d034db0f6f469898070ab',
             'dev_requirement' => true,
+        ),
+        'tecnickcom/tcpdf' => array(
+            'pretty_version' => '6.4.4',
+            'version' => '6.4.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tecnickcom/tcpdf',
+            'aliases' => array(),
+            'reference' => '42cd0f9786af7e5db4fcedaa66f717b0d0032320',
+            'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(
             'pretty_version' => '1.2.1',

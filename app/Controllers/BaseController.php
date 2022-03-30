@@ -15,6 +15,7 @@ use App\Models\Mfasilitashotel;
 use App\Models\Mfasilitaskamar;
 use App\Models\Mkamar;
 use App\Models\Mdetailkamar;
+use App\Models\Mreservasi;
 /**
  * Class BaseController
  *
@@ -41,9 +42,11 @@ class BaseController extends Controller
     protected $fasilitaskamar;
     // membuat properti $kamar
     protected $kamar;
-    // membuat properti $kamar
+    // membuat properti $detailkamar
     protected $detailkamar;
 
+    // membuat properti $reservasi
+    protected $reservasi;
     /**
      * An array of helpers to be loaded automatically upon
      * class instantiation. These helpers will be available
@@ -51,7 +54,9 @@ class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['fasilitaskamar'];
+    // me-load file fasilitaskamar_helper.php di folder app\Helpers
+     protected $helpers = ['fasilitaskamar']; 
+
 
     /**
      * Constructor.
@@ -78,5 +83,8 @@ class BaseController extends Controller
         
         // membuat instance detail kamar
         $this->detailkamar = NEW Mdetailkamar;
+
+        // membuat instance reservasi
+        $this->reservasi = NEW Mreservasi;
     }
 }

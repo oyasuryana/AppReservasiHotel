@@ -4,25 +4,31 @@
 <p><?=$introText;?>
 
 <form method="POST" action="<?=site_url('/edit-kamar');?>" enctype="multipart/form-data">
-<div class="form-group">
-    <label class="font-weight-bold">Nomor Kamar</label>
-    <input class="form-control" type="text" name="txtNomorKamar" value="<?=$Kamar['no_kamar'];?>" autocomplete="off" autofocus/>
-
-    <input class="form-control" type="hidden" name="txtIdKamar" value="<?=$Kamar['id_kamar'];?>"/>
-
-    <input class="form-control" type="hidden" name="txtFotoKamar" value="<?=$Kamar['foto_kamar'];?>"/>
-
-</div>
 
 <div class="form-group">
     <label class="font-weight-bold">Tipe Kamar</label>
-    <select class="form-control" name="txtTipeKamar">
+    <select class="form-control" name="txtTipeKamar" autofocus>
      <option <?=$Kamar['tipe_kamar']=='standar'? 'selected':null;?> value="standar" >Standar</option>
      <option <?=$Kamar['tipe_kamar']=='single'? 'selected':null;?> value="single">Single</option>
      <option <?=$Kamar['tipe_kamar']=='deluxe'? 'selected':null;?> value="deluxe">Deluxe</option>
      <option <?=$Kamar['tipe_kamar']=='suite'? 'selected':null;?> value="suite">Suite</option>
     </select>
+
+    <input class="form-control" type="hidden" name="txtIdKamar" value="<?=$Kamar['id_kamar'];?>"/>
+    <input class="form-control" type="hidden" name="txtFotoKamar" value="<?=$Kamar['foto_kamar'];?>"/>
+
 </div>
+
+<div class="form-group">
+    <label class="font-weight-bold">Harga Kamar Per Malam</label>
+    <input class="form-control" type="text" name="txtHargaKamar" value="<?=$Kamar['harga_kamar'];?>"/>
+</div>
+
+<div class="form-group">
+    <label class="font-weight-bold">Jumlah Kamar</label>
+    <input class="form-control" type="text" name="txtJumlahKamar" value="<?=$Kamar['jml_kamar'];?>" autocomplete="off"/>
+</div>
+
 
 <div class="form-group">
     <label class="font-weight-bold">Fasilitas Kamar</label>

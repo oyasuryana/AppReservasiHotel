@@ -4,19 +4,24 @@
 <p><?=$introText;?>
 
 <form method="POST" action="<?=site_url('/tambah-kamar');?>" enctype="multipart/form-data">
-<div class="form-group">
-    <label class="font-weight-bold">Nomor Kamar</label>
-    <input class="form-control" type="text" name="txtNomorKamar" autocomplete="off" autofocus/>
-</div>
 
 <div class="form-group">
     <label class="font-weight-bold">Tipe Kamar</label>
-    <select class="form-control" name="txtTipeKamar">
+    <select class="form-control" name="txtTipeKamar"  autofocus>
      <option value="standar">Standar</option>
      <option value="single">Single</option>
      <option value="deluxe">Deluxe</option>
      <option value="suite">Suite</option>
     </select>
+</div>
+<div class="form-group">
+    <label class="font-weight-bold">Harga Kamar Per Malam</label>
+    <input class="form-control" type="text" name="txtHargaKamar" autocomplete="off"/>
+</div>
+
+<div class="form-group">
+    <label class="font-weight-bold">Jumlah Kamar</label>
+    <input class="form-control" type="text" name="txtJumlahKamar" autocomplete="off"/>
 </div>
 
 <div class="form-group">

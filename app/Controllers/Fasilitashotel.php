@@ -12,13 +12,23 @@ class Fasilitashotel extends BaseController
         $data['JudulHalaman']='Fasilitas Hotel';
 
         // membuat data index introText dan mengirim ke views
-        $data['introText']='<p>Berikut ini adalah daftar fasilitas hotel, silahkan lakukan pengelolaan  fasilitas hotel</p>';
+        $data['introText']='<p>Berikut ini adalah daftar fasilitas hotel.</p>';
         
         $data['listFasilitas']=$this->fasilitashotel->find();
         // memanggil file tampil-fasilitas-hotel.php di folder app\views\admin
         return view('admin/tampil-fasilitas-hotel', $data);
     }
+    
+    public function tampilDiHome(){
+        $data['JudulHalaman']='Fasilitas Hotel';
+        $data['listFasilitas']=$this->fasilitashotel->find();
+        $data['introText']='<p>Berikut ini adalah fasilitas hotel yang tersedia untuk para tamu hotel</p>';
 
+        return view('home-fasilitas-hotel',$data);
+    }
+    
+    
+    
     public function tambah(){
         // 1. membuat data dengan index JudulHalaman & intro dan mengirim ke views
         $data['JudulHalaman']='Penambahan Fasilitas Hotel';

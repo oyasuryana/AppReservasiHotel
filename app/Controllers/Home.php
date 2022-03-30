@@ -6,6 +6,8 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        // 1. Daftar kamar
+        $data['listKamar']=$this->kamar->distinct()->find();
+        return view('beranda',$data);
     }
 }

@@ -19,7 +19,7 @@ function listFasilitasKamar($idKamar){
     return $listDetailKamar;
 }
 
-
+// disaat edit kamar
 function cekFasilitasDiKamar($idKamar,$idFasilitasKamar){
     $detailKamar=New Mdetailkamar;
     

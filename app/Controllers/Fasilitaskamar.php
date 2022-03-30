@@ -77,51 +77,70 @@ class Fasilitaskamar extends BaseController
 
         // 2. hanya dijalankan ketika memilih tombol edit
         if($id_fasilitas_kamar!=null){
-            // mencari data fasilitas berdasarkan primary key
+            
+            //3. mencari data fasilitas berdasarkan primary key
             $syarat=[
                 'id_fasilitas_kamar' => $id_fasilitas_kamar
             ];
             $data['detailFasilitasKamar']=$this->fasilitaskamar->where($syarat)->find()[0];
         }
 
-        // 3. loading helper form
+        // 4. loading helper form
         helper(['form']);
         
-        // 4. mengatur form
+        // 5. mengatur form
         $aturanForm=[
             'txtNamaFasilitas'=>'required',
             'txtDeskrkipsiFasilitas'=>'required'
         ];
 
-        // 5. dijalankan saat tombol update ditekan dan semua kolom diisi
+        // 6. dijalankan saat tombol update ditekan dan semua kolom diisi
         if($this->validate($aturanForm)){
 
+        // 7. menampung file foto
             $foto=$this->request->getFile('txtFotoFasilitas');
 
+            // 8. jika file foto ada / valid
             if($foto->isValid()){
-                $foto->move('uploads');
+
+            // 9. upload file foto 
+            $foto->move('uploads');
+            
+            //10. siapkam data yg akan di kirim
                 $data=[
                     'nama_fasilitas'=> $this->request->getPost('txtNamaFasilitas'),
                     'deskripsi_fasilitas' => $this->request->getPost('txtDeskrkipsiFasilitas'),
                     'foto_fasilitas'=> $foto->getClientName()
                 ];
+                // 11. hapus file lama
                 unlink('uploads/'.$this->request->getPost('txtFotoFasilitas'));
             } else {
+
+                // 12. siapkam data yg akan di kirim
                 $data=[
                     'nama_fasilitas'=> $this->request->getPost('txtNamaFasilitas'),
                     'deskripsi_fasilitas' => $this->request->getPost('txtDeskrkipsiFasilitas')
                 ];
             }
-            
+            // 13. update fasilitasa kamar
             $this->fasilitaskamar->update($this->request->getPost('txtIdFasilitasKamar'),$data);
 
+            // 14. alihkan ke tampil fasilitas kamar    
             return redirect()->to(site_url('/fasilitas-kamar'))->with('info','<div class="alert alert-success">Data berhasil diupdate</div>');
         } 
         
+        // 15. load file edit-fasiltias-kamar.php
         return view('admin/edit-fasilitas-kamar',$data);
         
     }
 
+    public function tampilDiHome(){
+        $data['JudulHalaman']='Fasilitas Kamar';
+        $data['listFasilitas']=$this->fasilitaskamar->find();
+        $data['introText']='<p>Berikut ini adalah fasilitas kamar yang tersedia sesuai tipe kamar yang ada.</p>';
+
+        return view('home-fasilitas-kamar',$data);
+    }
 
 
 
