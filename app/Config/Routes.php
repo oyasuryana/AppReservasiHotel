@@ -44,6 +44,8 @@ $routes->get('/order/(:num)','Reservasi::order/$1');
 
 $routes->post('/order','Reservasi::order');
 
+$routes->post('/hasil-cari','Reservasi::hasilCari');
+
 $routes->get('/cetak-invoice/(:num)','Reservasi::invoice/$1');
 
 ############### RUTE Otentifikasi Login #####################

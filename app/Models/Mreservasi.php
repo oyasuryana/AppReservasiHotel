@@ -42,4 +42,11 @@ class Mreservasi extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+
+    public function cariData($kataKunci){
+        $reservasi = new Mreservasi;
+        $reservasi->like('nama_pemesan',$kataKunci);
+        return $reservasi->find();
+    }
 }

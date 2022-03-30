@@ -65,6 +65,14 @@
     <a class="p-2 text-dark" href="<?=site_url('/fasilitashotel');?>">Fasilitas Hotel</a>
     <a class="p-2 text-dark" href="<?=site_url('/fasilitaskamar');?>">Fasilitas Kamar</a>
   </nav>
+  <form class="form-inline mt-2 mt-md-0" method="POST" action="<?=site_url('/hasil-cari');?>">
+  <div class="input-group">
+    <input type="text" name="txtKataKunci" class="form-control" placeholder="Nama" required>
+    <div class="input-group-append">
+      <button class="input-group-text" type="submit">Cari Invoice</button>
+    </div>
+  </div>  
+  </form>
 </div>
 
 

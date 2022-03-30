@@ -107,6 +107,14 @@ class Reservasi extends BaseController
         return redirect()->to(site_url('/tampil-reservasi'));
     }
 
+    public function hasilCari(){
+        $data['JudulHalaman']='Hasil Pencarian';
+        $data['introText']='Berikut ini hasil pencarian invoice atas nama '.$this->request->getPost('txtKataKunci');
+        $data['listHasilCari']=$this->reservasi->cariData($this->request->getPost('txtKataKunci'));
+
+        return view('hasil-pencarian-invoice.php',$data);
+    }
+
     public function invoice($idReservasi){
         $pdf = new TCPDF();
 		$pdf = new TCPDF('L', PDF_UNIT, 'A5', true, 'UTF-8', false);
@@ -126,7 +134,7 @@ class Reservasi extends BaseController
 		//line ini penting
 		$this->response->setContentType('application/pdf');
 		//Close and output PDF document
-        $pdf->Output('invoice.pdf', 'I');
+        $pdf->Output('INV-'.$idReservasi.'.pdf', 'I');
         	    
     }
 }
