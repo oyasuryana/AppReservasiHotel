@@ -43,37 +43,30 @@ Untuk instalasi silahkan pilih metode berikut
         `php spark serve` (tekan enter)
     e. Jalankan browser, arahkan url ke http://localhost:8080 (atau port yang tertera di terminal)    
 
-## Important Change with index.php
+## Error Karena Perbedaan Versi PHP
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Perbedaan versi PHP yang digunakan akan menyebabkan error, untuk mengantisipasi error tersebut lakukan langkah berikut :
+1. Jalankan editor (disarankan Visual Studio COde)
+2. Buka folder folder appReservasiHotel
+3. Pada visual studio code buat terminal baru
+4. ketik perintah berikut 
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+`composer update (tekan enter)`
 
-**Please** read the user guide for a better explanation of how CI4 works!
+5. Jalankan kembali apliaksi, ketik perintah berikut 
 
-## Repository Management
+        `php spark serve` (tekan enter)
+6. Jalankan browser, arahkan url ke http://localhost:8080 (atau port yang tertera di terminal)    
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+## Visit My Repository
 
-## Server Requirements
+Blog : https://ozs.web.id
+Subscribe YT channel : https://youtube.com/c/PojokProgrammer
 
-PHP version 7.3 or higher is required, with the following extensions installed:
+## Buy Me Copy
+Sebagai bentuk dukungan untuk tetap berkarya silahkan yang mau berdonasi mengganti pulsa
+kirik ke
+OVO - 085224191648
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php)
-- xml (enabled by default - don't turn it off)
-# AppReservasiHotel
+terima kasih
