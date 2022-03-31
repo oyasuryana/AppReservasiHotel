@@ -1,6 +1,6 @@
 # Aplikasi Resevasi Hotel
 
-## What is CodeIgniter?
+## Pengantar ?
 
 Aplikasi reservasi hotel dengan codeigniter4 ini merupakan sebuah contoh proyek untuk siswa Rekayasa Perangkat Lunak Jenjang SMK. Aktor dari aplikasi ini terdiri dari 3 yaitu :
 
@@ -10,19 +10,38 @@ Aplikasi reservasi hotel dengan codeigniter4 ini merupakan sebuah contoh proyek 
 
 Tamu bisa melihat galeri fasilitas hotel dan fasilitas kamar serta melakukan reservasi online tanpa harus membuat akun, administrator hanya bertugas mengelola data fasilitas hotel, fasilitas kamar dan kamar. Sedangkan resepsionis bertugas menerima tamu untuk melakukan cek in dan cek out tanpa mencatat pembayarannya, resepsionis juga bisa mengecek ketersediaan kamar.
 
-## Installation & updates
+## Prasyarat
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+Untuk menjalankan aplikasi ini aplikasi yang dibutuhkan
+1. PHP min versi 7.3.x
+2. MySQL
+3. Composer 
+4. Browser
+5. Git bash (optional untuk proses download)
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## Instalasi
 
-## Setup
+Untuk instalasi silahkan pilih metode berikut
+1. Download zip file, atau
+2. Clone dari repostory (membutuhkan Git yang terinstall di PC anda), dengan cara
+    a. jalankan terminal atau command line
+    b. jalankan perintah berikut :
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+    `git clone https://github.com/oyasuryana/AppReservasiHotel`
+    
+    c. Maka akan terdownload folder 'AppReservasiHotel'
+    d. Buat database dengan nama `appReservasiHotel`
+    e. Import file database dengan phpmyadmin atau MySQL client tool lainnya
+    f. Lakukan perubahan seting database di file env
+    g. rename file env menjadi .env (diawali tanda titik)
+3. Jalankan aplikasi
+    a. Jalankan editor (disarankan Visual Studio COde)
+    b. Buka folder folder appReservasiHotel
+    c. Pada visual studio code buat terminal baru
+    d. ketik perintah berikut 
+
+        `php spark serve` (tekan enter)
+    e. Jalankan browser, arahkan url ke http://localhost:8080 (atau port yang tertera di terminal)    
 
 ## Important Change with index.php
 
