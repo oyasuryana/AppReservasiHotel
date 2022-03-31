@@ -1,18 +1,14 @@
-# CodeIgniter 4 Application Starter
+# Aplikasi Resevasi Hotel
 
 ## What is CodeIgniter?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](http://codeigniter.com).
+Aplikasi reservasi hotel dengan codeigniter4 ini merupakan sebuah contoh proyek untuk siswa Rekayasa Perangkat Lunak Jenjang SMK. Aktor dari aplikasi ini terdiri dari 3 yaitu :
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+1. Tamu
+2. Admin
+3. Resepsionis
 
-More information about the plans for version 4 can be found in [the announcement](http://forum.codeigniter.com/thread-62615.html) on the forums.
-
-The user guide corresponding to this version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+Tamu bisa melihat galeri fasilitas hotel dan fasilitas kamar serta melakukan reservasi online tanpa harus membuat akun, administrator hanya bertugas mengelola data fasilitas hotel, fasilitas kamar dan kamar. Sedangkan resepsionis bertugas menerima tamu untuk melakukan cek in dan cek out tanpa mencatat pembayarannya, resepsionis juga bisa mengecek ketersediaan kamar.
 
 ## Installation & updates
 
