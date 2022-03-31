@@ -106,6 +106,7 @@ $routes->get('/edit-kamar/(:num)','Kamar::edit/$1',['filter'=>'otentifikasi']);
 
 $routes->post('/edit-kamar','Kamar::edit',['filter'=>'otentifikasi']);
 
+
 ############### RUTE untuk mengelola  Reservasi #####################
 
 $routes->get('/tampil-reservasi','Reservasi::index',['filter'=>'otentifikasi']);
@@ -115,6 +116,9 @@ $routes->post('/tampil-reservasi','Reservasi::index',['filter'=>'otentifikasi'])
 $routes->get('/set-cek-in/(:num)','Reservasi::setStatusIn/$1',['filter'=>'otentifikasi']);
 
 $routes->get('/set-cek-out/(:num)','Reservasi::setStatusOut/$1',['filter'=>'otentifikasi']);
+
+$routes->get('/cek-kamar','Reservasi::cekKamar',['filter'=>'otentifikasi']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -1,6 +1,5 @@
 <?=$this->extend('beranda');?>
 <?=$this->section('konten');?>
-
 <table class="table table-hover table-sm">
 <thead class="bg-light">
     <tr>

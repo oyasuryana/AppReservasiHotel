@@ -74,7 +74,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">Reservasi</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="<?=site_url('/tampil-reservasi');?>">Reservasi</a>
-          <a class="dropdown-item" href="<?=site_url('/tampil-kamar');?>">Cek Kamar</a>
+          <a class="dropdown-item" href="<?=site_url('/cek-kamar');?>">Cek Kamar</a>
         </div>
       </li>
       
