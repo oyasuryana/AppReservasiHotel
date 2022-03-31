@@ -51,11 +51,11 @@ Perbedaan versi PHP yang digunakan akan menyebabkan error, untuk mengantisipasi 
 3. Pada visual studio code buat terminal baru
 4. ketik perintah berikut 
 
-`composer update (tekan enter)`
+    `composer update (tekan enter)`
 
 5. Jalankan kembali apliaksi, ketik perintah berikut 
 
-        `php spark serve` (tekan enter)
+    `php spark serve` (tekan enter)
 6. Jalankan browser, arahkan url ke http://localhost:8080 (atau port yang tertera di terminal)    
 
 
