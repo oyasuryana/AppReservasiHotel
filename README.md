@@ -1,4 +1,4 @@
-# Aplikasi Resevasi Hotel
+# Aplikasi Reservasi Hotel
 
 ## Pengantar ?
 
@@ -70,3 +70,29 @@ kirik ke
 OVO - 085224191648
 
 terima kasih
+
+
+## Screenshoot
+1. Halaman Depan 
+![image](https://drive.google.com/uc?export=view&id=1gWFJLhiSbqSo6FOpkUheyoStCGhCzl66)
+
+2. Form Reservasi
+![image](https://drive.google.com/uc?export=view&id=188pUPFhS5MsQVBYKoXyHcZ4RRKN8XaSR)
+
+3. Halaman Admin : Daftar Fasilitas Hotel
+![image](https://drive.google.com/uc?export=view&id=124gpug32kqtJcAvQL8Duo-ZxcDEGIEAI)
+
+4. Halaman Admin : Daftar Fasilitas Kamar
+![image](https://drive.google.com/uc?export=view&id=1mGmdotmDQHKmsi4yEYIoab3XoJVV-_PW)
+
+5. Halaman Admin : Daftar Kamar
+![image](https://drive.google.com/uc?export=view&id=1BZmqkO4T-iWW29rLSZ7VuKE_wFlGmKBi)
+
+6. Halaman Admin : Tambah Kamar
+![image](https://drive.google.com/uc?export=view&id=15Lza7F4Ytl3XHiOYWZ8qDdmGmUQWTTcl)
+
+7. Halaman Resepsionis : Kelola Reservasi
+![image](https://drive.google.com/uc?export=view&id=1tgnB2kS62KlAQS1NZ0-DCB-vG4V0aAIf)
+
+8. Halaman Resepsionis : Cek Ketersedian Kamar
+![image](https://drive.google.com/uc?export=view&id=1XXcfiWsSdx-fQpfzdFi4Rwu2r_CRGyGe)
