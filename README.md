@@ -24,24 +24,24 @@ Untuk menjalankan aplikasi ini aplikasi yang dibutuhkan
 Untuk instalasi silahkan pilih metode berikut
 1. Download zip file, atau
 2. Clone dari repostory (membutuhkan Git yang terinstall di PC anda), dengan cara
-    a. jalankan terminal atau command line
-    b. jalankan perintah berikut :
+    1. jalankan terminal atau command line
+    2. jalankan perintah berikut :
 
     `git clone https://github.com/oyasuryana/AppReservasiHotel`
     
-    c. Maka akan terdownload folder 'AppReservasiHotel'
-    d. Buat database dengan nama `appReservasiHotel`
-    e. Import file database dengan phpmyadmin atau MySQL client tool lainnya
-    f. Lakukan perubahan seting database di file env
-    g. rename file env menjadi .env (diawali tanda titik)
+    3. Maka akan terdownload folder 'AppReservasiHotel'
+    4. Buat database dengan nama `appReservasiHotel`
+    5. Import file database dengan phpmyadmin atau MySQL client tool lainnya
+    6. Lakukan perubahan seting database di file env
+    7. rename file env menjadi .env (diawali tanda titik)
 3. Jalankan aplikasi
-    a. Jalankan editor (disarankan Visual Studio COde)
-    b. Buka folder folder appReservasiHotel
-    c. Pada visual studio code buat terminal baru
-    d. ketik perintah berikut 
+    1. Jalankan editor (disarankan Visual Studio COde)
+    2. Buka folder folder appReservasiHotel
+    3. Pada visual studio code buat terminal baru
+    4. ketik perintah berikut 
 
         `php spark serve` (tekan enter)
-    e. Jalankan browser, arahkan url ke http://localhost:8080 (atau port yang tertera di terminal)    
+    5. Jalankan browser, arahkan url ke http://localhost:8080 (atau port yang tertera di terminal)    
 
 ## Error Karena Perbedaan Versi PHP
 
